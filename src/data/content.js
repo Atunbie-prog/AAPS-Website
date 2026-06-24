@@ -12,7 +12,7 @@ export const practice = {
   address: "15, Dare Street, Ikotun, Lagos", // Added
   phone: ["+234 916 009 9977", "+234 812 449 9625"], // Added
   whatsapp: "2349160099977", // Added — used for wa.me links (no plus sign)
-  email: "", // [MD to insert once domain email is live]
+  email: "info@atunbiassociates.com", //Added
   domain: "atunbiassociates.com",
   officeHours: ["Monday – Friday: 8:00am – 5:00pm", "Saturday: 9:00am – 1:00pm"],
   social: {
