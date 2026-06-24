@@ -1,0 +1,55 @@
+/* ── Intro text ─────────────────────────────── */
+.intro-section__text {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--green-900);
+  line-height: 1.75;
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+/* ── Closing split — mobile-first ───────────── */
+.closing-section {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  -webkit-align-items: center;
+          align-items: center;
+}
+
+@media (min-width: 860px) {
+  .closing-section {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+}
+
+.closing-section__image {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+
+.closing-section__image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+
+.closing-section__text {
+  min-width: 0;
+}
+
+.closing-section__body {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: var(--ink-600);
+  line-height: 1.8;
+}
+
+/* ── Testimonial marquee bottom pad ─────────── */
+.testimonial-section {
+  padding-bottom: 5rem;
+}

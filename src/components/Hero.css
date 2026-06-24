@@ -1,0 +1,120 @@
+/* ── Shell ── */
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+          align-items: center;
+  overflow: hidden;
+  color: var(--white);
+}
+
+.hero--compact { min-height: 56vh; }
+
+/* ── Background image layer ── */
+.hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* Explicit fill + object-fit: cover prevents Firefox/Edge from
+   collapsing the image when width/height attrs are present */
+.hero__media img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  display: block;
+}
+
+/* ── Gradient scrim — lightened so imagery shows through ── */
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    -webkit-linear-gradient(180deg, rgba(10,26,16,0.28) 0%, rgba(10,28,18,0.48) 50%, rgba(8,24,14,0.70) 100%),
+    -webkit-linear-gradient(270deg, rgba(6,20,12,0.08) 0%, rgba(6,20,12,0.58) 100%);
+  background:
+    linear-gradient(180deg, rgba(10,26,16,0.28) 0%, rgba(10,28,18,0.48) 50%, rgba(8,24,14,0.70) 100%),
+    linear-gradient(90deg, rgba(6,20,12,0.58) 0%, rgba(6,20,12,0.08) 100%);
+}
+
+/* ── Content ── */
+.hero__inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 7rem 5% 4.5rem;
+}
+
+@media (max-width: 640px) {
+  .hero__inner { padding: 5.5rem 5% 3.5rem; }
+}
+
+.hero__eyebrow {
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  -webkit-align-items: center;
+          align-items: center;
+  gap: 0.6em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-500);
+  margin-bottom: 1.5rem;
+}
+
+.hero__eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 1.5px;
+  background: var(--gold-500);
+}
+
+.hero__headline {
+  font-size: clamp(2rem, 5.2vw, 3.8rem);
+  color: var(--white);
+  max-width: 18ch;
+  margin-bottom: 1.5rem;
+  line-height: 1.08;
+}
+
+.hero__sub {
+  font-size: clamp(0.95rem, 1.8vw, 1.18rem);
+  color: rgba(255,255,255,0.84);
+  max-width: 580px;
+  line-height: 1.72;
+  margin-bottom: 2.5rem;
+}
+
+.hero__ctas {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 480px) {
+  .hero__ctas {
+    -webkit-flex-direction: column;
+            flex-direction: column;
+    -webkit-align-items: stretch;
+            align-items: stretch;
+  }
+  .hero__ctas .btn { -webkit-justify-content: center; justify-content: center; }
+}
+
+.hero__seal {
+  display: -webkit-flex;
+  display: flex;
+}

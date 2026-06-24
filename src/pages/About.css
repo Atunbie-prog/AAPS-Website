@@ -1,0 +1,207 @@
+/* ── Practice story ─── */
+.about-story {
+  font-size: 1.08rem;
+  line-height: 1.85;
+  color: var(--ink-900);
+}
+
+/* ── Principal card — credential-focused, no photo ── */
+.principal-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 2.75rem;
+  max-width: 820px;
+  box-shadow: var(--shadow-md);
+  min-width: 0;
+  width: 100%;
+}
+
+.principal-card__header {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+          align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+
+/* Initials monogram replaces the portrait intentionally */
+.principal-card__monogram {
+  width: 80px;
+  height: 80px;
+  min-width: 80px;
+  border-radius: 50%;
+  background: var(--green-900);
+  color: var(--gold-500);
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.6rem;
+  letter-spacing: -0.02em;
+  -webkit-flex-shrink: 0;
+          flex-shrink: 0;
+}
+
+.principal-card__name {
+  font-size: clamp(1.3rem, 2.5vw, 1.75rem);
+  color: var(--green-900);
+  margin-bottom: 0.3rem;
+}
+
+.principal-card__title {
+  font-size: 0.92rem;
+  color: var(--ink-600);
+  line-height: 1.45;
+}
+
+.principal-card__divider {
+  height: 1px;
+  background: var(--line);
+  margin-bottom: 1.75rem;
+}
+
+/* Credential list */
+.principal-dl {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  gap: 1.35rem;
+  margin-bottom: 2rem;
+}
+
+.principal-dl__item dt {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+          align-items: center;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--green-700);
+  margin-bottom: 0.3rem;
+}
+
+.principal-dl__item dd {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--ink-900);
+  line-height: 1.55;
+  padding-left: 1.25rem;
+}
+
+/* Badge row */
+.principal-card__badge-row {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
+  gap: 0.65rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.principal-badge {
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  -webkit-align-items: center;
+          align-items: center;
+  padding: 0.38rem 0.85rem;
+  border: 1.5px solid var(--green-700);
+  border-radius: 999px;
+  font-size: 0.73rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--green-900);
+  background: var(--green-50);
+}
+
+/* ── Mission section ─────────────────────────────── */
+.mission-section {
+  position: relative;
+  padding: 6rem 2rem;
+  color: var(--white);
+  overflow: hidden;
+}
+
+@media (max-width: 640px) {
+  .mission-section { padding: 4rem 1.25rem; }
+}
+
+.mission-section__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.mission-section__media img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+
+.mission-section__scrim {
+  position: absolute;
+  inset: 0;
+  background: -webkit-linear-gradient(120deg, rgba(8,26,16,0.72) 0%, rgba(15,61,36,0.55) 55%, rgba(15,61,36,0.42) 100%);
+  background:         linear-gradient(120deg, rgba(8,26,16,0.72) 0%, rgba(15,61,36,0.55) 55%, rgba(15,61,36,0.42) 100%);
+}
+
+.mission-section__inner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--prose-max);
+}
+
+.mission-section .section-heading { color: var(--white); }
+.mission-section .eyebrow         { color: var(--gold-500); }
+
+/* ── Values grid ─────────────────────────────────── */
+.values-grid {
+  display: -webkit-flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .values-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.value-card {
+  background: var(--green-50);
+  border-radius: var(--radius-md);
+  padding: 1.75rem 1.5rem;
+}
+
+.value-card__title {
+  color: var(--green-900);
+  font-size: 1.05rem;
+  margin-bottom: 0.6rem;
+}
+
+.value-card__desc {
+  font-size: 0.9rem;
+  color: var(--ink-600);
+  line-height: 1.6;
+}
+
+@media (max-width: 480px) {
+  .principal-card { padding: 1.75rem 1.25rem; }
+  .values-grid    { grid-template-columns: 1fr; }
+}

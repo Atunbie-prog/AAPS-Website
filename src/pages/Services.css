@@ -1,0 +1,102 @@
+.services-list {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .services-list { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+}
+
+@media (min-width: 900px) {
+  .services-list { gap: 1.75rem; }
+}
+
+.service-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.5rem;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  min-width: 0;
+  -webkit-transition: box-shadow 0.2s var(--ease), border-color 0.2s var(--ease);
+          transition: box-shadow 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+
+@media (min-width: 640px) {
+  .service-card { padding: 2.5rem 2rem; }
+}
+
+.service-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--green-700);
+}
+
+.service-card__icon {
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  background: var(--green-100);
+  color: var(--green-900);
+  border-radius: 50%;
+  margin-bottom: 1.4rem;
+}
+
+.service-card__title {
+  font-size: clamp(1.1rem, 2vw, 1.32rem);
+  color: var(--green-900);
+  margin-bottom: 0.85rem;
+}
+
+.service-card__intro {
+  font-size: 0.96rem;
+  color: var(--ink-600);
+  line-height: 1.7;
+  margin-bottom: 1.4rem;
+}
+
+.service-card__points {
+  list-style: none;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  gap: 0.65rem;
+  margin-bottom: 1.75rem;
+  -webkit-flex-grow: 1;
+          flex-grow: 1;
+}
+
+.service-card__points li {
+  font-size: 0.9rem;
+  color: var(--ink-600);
+  padding-left: 1.2rem;
+  position: relative;
+  line-height: 1.55;
+}
+
+.service-card__points li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold-500);
+}
+
+.service-card .btn {
+  -webkit-align-self: flex-start;
+          align-self: flex-start;
+}
