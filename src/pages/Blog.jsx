@@ -10,7 +10,7 @@ export default function Blog() {
   return (
     <>
       <PageMeta
-        title="Blog & Resources"
+        title="ItsKOKOPEE Resources"
         description="Professional compliance guidance on CAC registration, Annual Returns, NGO registration, and financial management in Nigeria."
       />
 
