@@ -12,6 +12,7 @@ import TestimonialMarquee from '../components/TestimonialMarquee.jsx'
 import AudienceStrip from '../components/AudienceStrip.jsx'
 import { home } from '../data/content.js'
 import { heroImages, sectionImages } from '../data/images.js'
+import { organizationSchema } from '../data/seo.js'
 import './Home.css'
 
 const TILE_ICONS = [
@@ -23,8 +24,11 @@ export default function Home() {
   return (
     <>
       <PageMeta
-        title="Home"
-        description="CAC accredited agency and financial management practice serving businesses, NGOs, churches, cooperatives, and associations across Nigeria."
+        title="CAC Registration & Financial Management in Nigeria"
+        description="CAC accredited agency and financial management practice serving businesses, NGOs, churches, cooperatives, and associations across Nigeria. Registration, Annual Returns, bookkeeping, and BOI loan support."
+        path="/"
+        keywords="CAC registration Nigeria, business registration Lagos, Annual Returns filing, NGO registration, financial management, BOI loan application"
+        jsonLd={organizationSchema()}
       />
 
       <Hero

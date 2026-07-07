@@ -3,6 +3,7 @@ import PageMeta from '../components/PageMeta.jsx'
 import Hero from '../components/Hero.jsx'
 import { about, practice } from '../data/content.js'
 import { heroImages, sectionImages } from '../data/images.js'
+import { organizationSchema, breadcrumbSchema } from '../data/seo.js'
 import './About.css'
 
 export default function About() {
@@ -10,7 +11,16 @@ export default function About() {
     <>
       <PageMeta
         title="About Us"
-        description="Learn about Atunbi Associates Professional Services — our story, principal, mission, and values."
+        description="Learn about Atunbi Associates Professional Services — our story, our principal (a Fellow of ICAN, Accreditation No: ICAN/IND/3408222), our mission, and our values."
+        path="/about"
+        keywords="ICAN accredited CAC agent, chartered accountant Lagos, compliance practice Nigeria"
+        jsonLd={[
+          organizationSchema(),
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'About Us', path: '/about' },
+          ]),
+        ]}
       />
 
       <Hero

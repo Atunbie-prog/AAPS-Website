@@ -4,6 +4,7 @@ import PageMeta from '../components/PageMeta.jsx'
 import Hero from '../components/Hero.jsx'
 import { blogInfo, blogPosts } from '../data/content.js'
 import { heroImages } from '../data/images.js'
+import { blogListSchema, breadcrumbSchema } from '../data/seo.js'
 import './Blog.css'
 
 export default function Blog() {
@@ -11,7 +12,16 @@ export default function Blog() {
     <>
       <PageMeta
         title="Blog & Resources"
-        description="Professional compliance guidance on CAC registration, Annual Returns, NGO registration, and financial management in Nigeria."
+        description="Professional compliance guidance on CAC registration, Annual Returns, NGO registration, and financial management for Nigerian businesses and organisations."
+        path="/blog"
+        keywords="CAC compliance blog, Annual Returns guide Nigeria, NGO registration guide, BOI loan tips"
+        jsonLd={[
+          blogListSchema(),
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Blog', path: '/blog' },
+          ]),
+        ]}
       />
 
       <Hero

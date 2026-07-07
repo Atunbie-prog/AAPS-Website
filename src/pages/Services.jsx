@@ -7,6 +7,7 @@ import PageMeta from '../components/PageMeta.jsx'
 import Hero from '../components/Hero.jsx'
 import { services } from '../data/content.js'
 import { heroImages } from '../data/images.js'
+import { servicesSchema, breadcrumbSchema } from '../data/seo.js'
 import './Services.css'
 
 const ICONS = [
@@ -18,8 +19,17 @@ export default function Services() {
   return (
     <>
       <PageMeta
-        title="Services"
-        description="CAC Business Registration, Annual Returns Filing, NGO Registration, Bookkeeping, BOI Loan Support, and more."
+        title="Our Services"
+        description="CAC Business Registration, Annual Returns Filing, NGO & Incorporated Trustee Registration, Post-Incorporation Filings, Bookkeeping, BOI Loan Support, TIN/VAT/SMEDAN Registration, and Business Plan Preparation."
+        path="/services"
+        keywords="CAC business registration, Annual Returns filing Nigeria, NGO registration, bookkeeping services Lagos, BOI loan support, TIN VAT SMEDAN registration, business plan preparation"
+        jsonLd={[
+          servicesSchema(),
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Services', path: '/services' },
+          ]),
+        ]}
       />
 
       <Hero

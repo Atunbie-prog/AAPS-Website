@@ -4,12 +4,11 @@ import Hero from '../components/Hero.jsx'
 import ContactForm from '../components/ContactForm.jsx'
 import { practice } from '../data/content.js'
 import { heroImages } from '../data/images.js'
+import { contactSchema, breadcrumbSchema } from '../data/seo.js'
 import './Contact.css'
 
-// Hardcoded per client spec — first number, exact format, pre-filled message
 const WA_HREF = 'https://wa.me/2349160099977?text=Hello,%20I%20would%20like%20to%20make%20an%20enquiry%20regarding%20Atunbi%20Associates.'
 
-// Official WhatsApp glyph SVG
 function WhatsAppGlyph() {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="18" height="18" aria-hidden="true">
@@ -25,7 +24,16 @@ export default function Contact() {
     <>
       <PageMeta
         title="Contact Us"
-        description="Get in touch with Atunbi Associates Professional Services — phone, WhatsApp, email, or the contact form."
+        description="Get in touch with Atunbi Associates Professional Services — phone, WhatsApp, email, or the contact form. We respond within 24 hours."
+        path="/contact"
+        keywords="contact CAC agent Lagos, Atunbi Associates contact, compliance consultation Nigeria"
+        jsonLd={[
+          contactSchema(),
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Contact Us', path: '/contact' },
+          ]),
+        ]}
       />
 
       <Hero
@@ -39,13 +47,11 @@ export default function Contact() {
       <section className="section section--card">
         <div className="container contact-grid">
 
-          {/* ── Left: enquiry form ── */}
           <div className="contact-grid__form">
             <h2 className="section-heading" style={{ marginBottom: '1.75rem' }}>Send an Enquiry</h2>
             <ContactForm />
           </div>
 
-          {/* ── Right: contact details ── */}
           <div className="contact-grid__details">
 
             <div className="contact-detail-card">

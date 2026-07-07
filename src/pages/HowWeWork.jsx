@@ -2,6 +2,7 @@ import PageMeta from '../components/PageMeta.jsx'
 import Hero from '../components/Hero.jsx'
 import { howWeWork } from '../data/content.js'
 import { heroImages } from '../data/images.js'
+import { howWeWorkSchema, breadcrumbSchema } from '../data/seo.js'
 import './HowWeWork.css'
 
 export default function HowWeWork() {
@@ -9,7 +10,16 @@ export default function HowWeWork() {
     <>
       <PageMeta
         title="How We Work"
-        description="A clear, step-by-step process — from enquiry to ongoing compliance support."
+        description="A clear, step-by-step process — from enquiry to Engagement Letter to ongoing compliance support. See exactly what happens when you work with Atunbi Associates."
+        path="/how-we-work"
+        keywords="CAC registration process, compliance service process Nigeria"
+        jsonLd={[
+          howWeWorkSchema(),
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'How We Work', path: '/how-we-work' },
+          ]),
+        ]}
       />
 
       <Hero
